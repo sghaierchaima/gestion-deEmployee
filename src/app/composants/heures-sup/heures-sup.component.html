@@ -1,0 +1,38 @@
+<div class="container mt-5">
+    <div class="card p-4 mb-4 shadow-lg rounded-3">
+      <h2 class="text-center mb-4">Gestion des Heures Supplémentaires</h2>
+  
+      <!-- Formulaire d'ajout des heures supplémentaires -->
+      <div class="mb-4">
+        <input class="form-control mb-2" [(ngModel)]="newHeureSup.employe_id" placeholder="ID de l'employé" />
+        <input class="form-control mb-2" [(ngModel)]="newHeureSup.date" placeholder="Date (YYYY-MM-DD)" />
+        <input class="form-control mb-2" [(ngModel)]="newHeureSup.nb_heures" placeholder="Nombre d'heures supplémentaires" />
+        <button class="btn btn-primary w-100" (click)="ajouterHeureSup()">Ajouter</button>
+      </div>
+  
+      <!-- Tableau d'affichage des heures supplémentaires -->
+      <table class="table table-bordered table-hover mt-4">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>ID Employé</th>
+            <th>Date</th>
+            <th>Nombre d'heures</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let heureSup of heuresSup">
+            <td>{{ heureSup.id }}</td>
+            <td>{{ heureSup.employe_id }}</td>
+            <td>{{ heureSup.date }}</td>
+            <td>{{ heureSup.nb_heures }}</td>
+            <td>
+              <button class="btn btn-danger btn-sm" (click)="supprimerHeureSup(heureSup.id)">Supprimer</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
