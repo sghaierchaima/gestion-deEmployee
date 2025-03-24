@@ -43,7 +43,11 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
+              "optimization": true,
+  "aot": true,
+  "extractLicenses": true,
+  "outputHashing": "all",
+  "budgets": [
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
